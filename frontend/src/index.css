@@ -16,14 +16,44 @@ html, body {
   font-family: 'Fira Code', monospace;
   display: grid;
   place-items: center;
+  overflow: hidden;
+}
+
+.-choose-mode {
+  display: flex;
+  width: calc(387px);
+  overflow: hidden;
+  border-top-left-radius: 0.7rem;
+  border-top-right-radius: 0.7rem;
+  background-color: rgba(255,255,255, 0.75);
+  border: 2px solid var(--text-color);
+  border-bottom: 0;
+}
+
+.-choose-mode-mode {
+  width: 50%;
+  color: var(--subtext-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 0.3rem 0 0.3rem 0;
+  cursor: pointer;
 }
 
 .-main {
-  width: max-content;
+  width: calc(387px - 2rem);
   padding: 1rem;
   border-radius: 0.7rem;
   background-color: rgba(255,255,255, 0.75);
   max-width: 95vw;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border: 2px solid var(--text-color);
+  border-top: 0;
+  box-shadow: rgba(0, 0, 0, 0.288) 0px 5px 10px;
 }
 
 .-heading {
@@ -44,9 +74,12 @@ html, body {
   color: var(--text-color);
   font-weight: 500;
   letter-spacing: 3px;
+  border: 2px solid var(--text-color);
+  border-bottom: 0;
+  box-shadow: rgba(0, 0, 0, 0.288) 0px 5px 10px;
 }
 
-#root {
+.-false-root {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -84,6 +117,32 @@ html, body {
   transition-duration: 0.1s;
 }
 
+.-background {
+  background-color: rgba(255,255,255, 0.75);
+}
+
+.-font {
+  font-family: 'Fira Code', monospace;
+  color: var(--text-color);
+}
+
+.-main-textarea {
+  width: 350px;
+  max-width: 92vw;
+  border: 1px solid var(--text-color);
+  font-size: 0.65rem;
+  color: var(--text-color);
+  background-color: transparent;
+  border-radius: 0.6rem;
+  margin-top: 10px;
+  font-family: 'Fira Code', monospace;
+  text-indent: 0.6rem;
+  outline: 3px solid rgb(0,0,0,0);
+  transition-duration: 0.1s;
+  resize: vertical;
+  border-bottom-right-radius: 0;
+}
+
 .-main-youtube-div {
   width: 350px;
   max-width: 92vw;
@@ -112,7 +171,6 @@ html, body {
   height: 100%;
   display: grid;
   place-items: center;
-  transition-duration: 0.1s;
   border-radius: 0.5rem;
   cursor: pointer;
   font-size: 1.2rem;
@@ -128,4 +186,21 @@ html, body {
 
 .-main-button:active {
   background-color: #2b2b46;
+}
+
+.-main-showvideo {
+  width: 100%;
+  max-width: 100%;
+  height: 40%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+/*maxWidth: '100%', whiteSpace: 'nowrap', textOverflow: 'ellipsis', overflow: 'hidden'*/
+.-main-video-title {
+  max-width: calc(387px - 140px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
